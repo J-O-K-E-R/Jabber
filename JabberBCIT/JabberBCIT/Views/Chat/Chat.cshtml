@@ -20,6 +20,19 @@
     <script src="~/signalr/hubs"></script>
     <!--SignalR script to update the chat page and send messages.-->
     <script src="~/Scripts/updatechat.js"></script>
+    <script>
+        function keypressHandler(e) {
+            if (e.which == 13) {
+                e.preventDefault(); //stops default action: submitting form
+                $(this).blur();
+                $('#sendmessage').focus().click();//give your submit an ID
+            }
+        }
+
+        $('#message').keypress(keypressHandler);
+    </script>
+
 }
+
 
 
